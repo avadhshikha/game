@@ -1,3 +1,3 @@
-# game
+# Avadh
 
 Static browser game project.
