@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockfall Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hud-panel title-panel" aria-label="Game title">
+        <div>
+          <p class="eyebrow">Arcade puzzle</p>
+          <h1>Blockfall</h1>
+        </div>
+        <button class="icon-button" id="soundToggle" type="button" aria-label="Toggle sound" title="Toggle sound">
+          <span aria-hidden="true">&#9834;</span>
+        </button>
+      </section>
+
+      <section class="play-area" aria-label="Blockfall game board">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="pause-card" id="pauseCard" aria-live="polite">
+          <p id="pauseTitle">Press Start</p>
+          <span id="pauseText">Stack blocks, clear rows, chase the high score.</span>
+        </div>
+      </section>
+
+      <aside class="hud-panel stats-panel" aria-label="Game statistics">
+        <div class="preview-wrap">
+          <p class="panel-label">Next</p>
+          <canvas id="nextCanvas" width="120" height="120"></canvas>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat">
+            <span>Lines</span>
+            <strong id="lines">0</strong>
+          </div>
+          <div class="stat">
+            <span>Level</span>
+            <strong id="level">1</strong>
+          </div>
+          <div class="stat">
+            <span>Best</span>
+            <strong id="best">0</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="startButton" type="button">Start</button>
+          <button id="pauseButton" type="button">Pause</button>
+        </div>
+      </aside>
+
+      <section class="hud-panel controls-panel" aria-label="Controls">
+        <div class="mobile-actions" aria-label="Game actions">
+          <button id="mobileStartButton" type="button">Start</button>
+          <button id="mobilePauseButton" type="button">Pause</button>
+        </div>
+        <button class="control-button" data-action="left" type="button" aria-label="Move left">&larr;</button>
+        <button class="control-button" data-action="rotate" type="button" aria-label="Rotate">&#8635;</button>
+        <button class="control-button" data-action="right" type="button" aria-label="Move right">&rarr;</button>
+        <button class="control-button wide" data-action="drop" type="button" aria-label="Hard drop">Drop</button>
+        <button class="control-button wide" data-action="down" type="button" aria-label="Move down">Down</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
